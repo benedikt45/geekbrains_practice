@@ -1,0 +1,56 @@
+body {
+  background-color: #f8f8f8
+}
+
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu li {
+  list-style-type: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 50%;
+  background-color: #235B79;
+  padding: 5px 5px;
+}
+
+h3 {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  margin:
+}
+
+.description_short {
+  color: #707070;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+.description_full {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.list_product li {
+  list-style-image: url(img/marker.png);
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+input[type="text"] {
+  height: 130%;
+  width: 200px;
+  color: blue;
+  font-style: oblique;
+}
