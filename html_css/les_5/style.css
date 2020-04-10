@@ -1,0 +1,131 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.header {
+  display: inline-block;
+  height: 50px;
+}
+
+.container {
+  margin: 0 40px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.top_row {
+  height: 100px;
+}
+
+p::first-letter {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.header img {
+  width: 10%;
+  margin-top: 20px;
+}
+
+.menu {
+  display: inline-block;
+  margin: 5px;
+  float: right;
+}
+
+.product {
+  float: left;
+  padding-bottom: 10px;
+}
+
+.map {
+  width: 100%;
+  height: 374px;
+}
+
+.footer {
+  height: 40px;
+  background-color: gray;
+  text-align: right;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.menu a:active {
+  color: gray;
+}
+
+h3 {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  margin:
+}
+
+.description_short {
+  color: #707070;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+
+.description_full {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.list_product li {
+  list-style-image: url(img/marker.png);
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+input[type="text"] {
+  height: 130%;
+  width: 200px;
+  color: blue;
+  font-style: oblique;
+  text-transform: capitalize;
+}
+
+input[name="email"]:enabled {
+  color: red;
+}
+
+.img_mini {
+  width: 5%;
+  padding-right: 10px;
+  padding-left: 30px;
+}
+
+.img_max {
+  width: 30%;
+  outline: 1px solid #666;
+}
+
+.img_max:hover {
+  outline: none;
+}

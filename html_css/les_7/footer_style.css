@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.header {
+  min-width: 200px;
+  background-color: darkcyan;
+}
+
+.nav {
+  height: 200px;
+  width: 150px;
+  background-color: black;
+  float: left;
+}
+
+.body {
+  margin-left: 150px;
+}
+
+.clr {
+  height: 100px;
+}
+
+.footer {
+  height: 100px;
+  background-color: #ccc;
+  /* margin-top: -100px; */
+  width: 1200px;
+  margin: -100px auto 0;
+}
