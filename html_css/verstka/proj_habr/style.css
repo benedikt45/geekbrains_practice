@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  min-width: 1440px;
+  background-image: url('img/background_p1.png');
+  background-size: 100% 100%;
+}
+
+.header {
+  display: flex;
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+  padding-top: 25px;
+  align-items: center;
+}
+
+.logo {
+  flex: 1;
+  /* position: absolute;*/
+  width: 107px;
+  height: 98.52px;
+  /*left: 150px;
+  top: 25px; */
+  /* float: left; */
+}
+
+.menu {
+  /* position: absolute; */
+  /* left: 401px;
+  top: 76px; */
+  /* min-width: 1050px; */
+  /* float: right; */
+  flex: 6;
+}
+
+.menu-item {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 17px;
+}
+
+.menu-link {
+  color: #EAEAEA;
+  font-size: 16px;
+  line-height: 15px;
+  font-family: Gotham Pro;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.container-text {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.welcome-text {
+  text-align: center;
+  color: #FFFFFF;
+  /* position: absolute; */
+  width: 796px;
+  height: 86px;
+  /* left: 322px;
+  top: 323px; */
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.company-name-text {
+  color: #DEBB7C;
+}
+
+.btn {
+  margin-top: 60px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  /* position: absolute; */
+  width: 248px;
+  height: 54px;
+  /* left: 596px;
+    top: 484.56px; */
+  color: #FFFFFF;
+  font-size: 18px;
+  background: #DEBB7C;
+  box-shadow: 0px 5px 50px rgba(222, 187, 124, 0.2);
+  border-radius: 10px;
+}
