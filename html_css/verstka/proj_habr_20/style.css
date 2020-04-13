@@ -6,6 +6,7 @@
 html,
 body {
   height: 100%;
+  min-height: 600px;
 }
 
 a {
@@ -104,7 +105,8 @@ li {
 
 .content-page-1 {
   width: 800px;
-  margin: 200px auto 0;
+  /* margin: 200px auto 0; */
+  margin: 10% auto 0;
   text-align: center;
 }
 
