@@ -4,6 +4,12 @@
 @width-page: 1055px;
 @first-element-page-padding: 30px;
 
+.size(@i) {
+  @media (max-width: 700) {
+    font-size: @i+px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -60,7 +66,8 @@ li {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 18px;
-  transition: background-color 0.5s linear 0s
+  transition: background-color 0.5s linear 0s;
+  .size(5);
 }
 
 .button:hover {
