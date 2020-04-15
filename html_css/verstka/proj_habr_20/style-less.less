@@ -60,6 +60,16 @@ li {
   color: #FFFFFF;
   font-weight: bold;
   font-size: 18px;
+  transition: background-color 0.5s linear 0s
+}
+
+.button:hover {
+  background-color: #e2aa46;
+}
+
+.button:active {
+  background-color: #a88547;
+  transition: none;
 }
 
 .page-padding-top {
@@ -143,6 +153,11 @@ li {
           font-size: 16px;
           color: #EAEAEA;
         }
+      }
+
+      .menu-link:hover {
+        font-size: 20px;
+        color: #DEBB7C;
       }
     }
   }
@@ -401,6 +416,7 @@ li {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    position: relative;
 
     .photo-page-4 {
       flex: 1/4;
@@ -409,6 +425,18 @@ li {
     .photo-page-4 > img {
       width: 250px;
     }
+
+    .photo-page-4 > img:hover {
+      cursor: pointer;
+    }
+
+    .photo-page-4 > img:active {
+      position: absolute;
+      left: 29%;
+      top: 1%;
+      width: 500px;
+    }
+
   }
   // .h2-padding-activists-page-4 {
   //   padding-top: 10px;
@@ -469,11 +497,16 @@ li {
       border: 1px solid #DACCB5;
       box-sizing: border-box;
       margin: 10px 15px;
-      line-height: 2.8;
+      line-height: 3;
       padding: 0 15px;
     }
 
     .active-menu-item {
+      background-color: #DEBB7C;
+      box-shadow: 0 4px 20px rgba(222, 187, 124, 0.5);
+    }
+
+    .help-menu-item:hover {
       background-color: #DEBB7C;
       box-shadow: 0 4px 20px rgba(222, 187, 124, 0.5);
     }
