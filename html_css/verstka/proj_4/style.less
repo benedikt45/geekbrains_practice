@@ -1,0 +1,158 @@
+// "out": "style.css", "compress": true
+@gutter: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: -@gutter;
+  margin-right: -@gutter;
+}
+
+.col(@i) when (@i=0) {
+  flex: 0 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col(@i) when (default()) {
+  flex: 0 0 calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  // flex: 0 0 calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  margin-left: @gutter;
+  margin-right: @gutter;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  color: #262626;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 34px;
+  color: #262626;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 19px;
+  color: #262626;
+}
+
+.pink {
+  color: #ED5277;
+}
+
+.bgi {
+  min-width: 1440px;
+  height: 100vh;
+  background-image: url("img/background.png");
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  width: 100vw;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.section {
+  width: 1290px;
+  margin: 80px auto;
+}
+
+.section-1 {
+  height: 100vh;
+
+  .header {
+    padding-top: 34px;
+    padding-left: 43px;
+    padding-right: 43px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo-link {
+      font-weight: 900;
+      font-size: 26px;
+      color: #FFFFFF;
+    }
+
+    .checkin {
+      font-weight: 800;
+      font-size: 17px;
+      color: #FFFFFF;
+    }
+  }
+
+  .content {
+    width: 1290px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    h1 {
+      margin-top: 117px;
+      width: calc(8/12 *100%);
+      text-align: center;
+    }
+
+    .block {
+      // width: calc(6/12 *100%);
+      margin-top: 69px;
+      .row-flex;
+
+      a {
+        .col(6);
+        text-align: center;
+        display: inline-block;
+        height: 54px;
+        width: 260px;
+        color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        border-radius: 2px;
+        font-weight: bold;
+        line-height: 50px;
+        font-size: 15px;
+      }
+
+      a:hover {
+        background-color: #ED5277;
+        border-color: #ED5277;
+      }
+    }
+  }
+}
+
+.section-2 {
+  .header {
+    .row-flex;
+    h2 {
+      .col(6);
+    }
+  }
+}

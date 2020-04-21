@@ -1,0 +1,33 @@
+// "out": "flex-grid.css", "compress": true
+
+@gutter: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: -@gutter;
+  margin-right: -@gutter;
+}
+
+.container {
+  padding: 0 @gutter;
+}
+
+.col(@i) when (@i=0) {
+  flex: 0 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col(@i) when (default()) {
+  max-width: calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  flex: 0 0 calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  margin-left: @gutter;
+  margin-right: @gutter;
+}
