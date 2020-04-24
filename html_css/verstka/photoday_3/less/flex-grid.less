@@ -51,7 +51,7 @@ a {
 }
 
 .size(@n) when (default()) {
-  @val: 1 / @n * 100%;
+  @val: @n / 12  * 100%;
   width: ~"calc(@{val} - @{offset})"
   // max-width: calc(~"(@{i}/12 *100%) - @{gutter}*2");
   // flex: 0 0 calc(~"(@{i}/12 *100%) - @{gutter}*2");
