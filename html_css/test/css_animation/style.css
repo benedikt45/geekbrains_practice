@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  width: 200px;
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  background-color: gray;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+li > ul {
+  /* display: none; */
+  width: 0%;
+  overflow: hidden;
+  position: absolute;
+  left: 100%;
+  top: -1px;
+  transition: width 1s;
+}
+
+
+li:hover {
+  background-color: green;
+}
+/*
+li:hover ul {
+  opacity: 1;
+  left:100%;
+} */
+
+body > ul li:hover > ul {
+  width: 100%;
+}

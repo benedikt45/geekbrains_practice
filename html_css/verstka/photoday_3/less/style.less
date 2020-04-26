@@ -78,6 +78,10 @@ p {
   span {
     color: @color_pink;
   }
+
+  &_black {
+    color: @color_black;
+  }
 }
 
 .button {
@@ -136,7 +140,7 @@ p {
   &__buttons {
     display: inline-block;
     flex-wrap: wrap;
-    margin: 70px auto;
+    margin: 70px auto 0;
     max-width: 550px;
     display: flex;
     justify-content: space-between;
@@ -155,6 +159,9 @@ p {
 .photoItem {
   .col();
   .size(3);
+  @media screen and (max-width: 1024px) {
+    .size(4);
+  }
   background-color: #FFFFFF;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -168,8 +175,10 @@ p {
 
   &__like {
     position: absolute;
-    top: 53%;
-    left: 90%;
+    top: 50%;
+    right: 5%;
+    // top: 175px;
+    // right: 10px;
   }
 
   &__bottom {
@@ -238,6 +247,15 @@ p {
   .row-flex();
   margin-top: 39px;
 }
+@media screen and (max-width: 1300px) {
+  .photoItems > div:last-child {
+    display: none;
+  }
+
+  .requestItems > div:last-child {
+    display: none;
+  }
+}
 
 .requestItem {
   .col();
@@ -305,12 +323,16 @@ p {
 .socialLinks {
   &__item {
     display: inline-block;
-    margin-left: 19px;
-    margin-right: 18px;
+    width: 36px;
+    height: 36px;
+    margin-left: 10px;
     color: @color_black;
-    // background-color: black;
-    // padding: 9px;
-    // border-radius: 21px;
+    background-color: @color_black;
+    color: @color_white;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 35px;
+    cursor: pointer;
   }
 }
 
@@ -323,24 +345,25 @@ p {
   font-size: 17px;
   background-color: #F3F3F3;
   border-top: 1px solid #DDDDDD;
+  align-items: center;
 
   &__menu {
     margin-left: 19px;
   }
 
   &__copyright {
-    // margin-right: 29px;
+    margin-right: 30px;
     margin-left: auto;
   }
 
   &__socialLinks {
     margin-left: 21px;
+    margin-right: 40px;
   }
-
-  &__socialLinks > div:last-child {
-    margin-right: 80px;
-  }
-  @media screen and (max-width: 1024px) {
+  // &__socialLinks > div:last-child {
+  //   margin-right: 80px;
+  // }
+  @media screen and (max-width: 1300px) {
     &__menu {
       .size(6);
       flex-wrap: wrap;
@@ -354,5 +377,12 @@ p {
     &__copyright {
       align-self: center;
     }
+  }
+}
+
+.page-2 {
+  .page-2__header {
+    background-color: #F3F3F3;
+    height: 80px;
   }
 }

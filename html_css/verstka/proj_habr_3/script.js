@@ -1,4 +1,3 @@
-
 //Обнуление нажатия кнопки по-умолчанию <a>
 var all_a = document.querySelectorAll('a');
 for (i = 0; i <= all_a.length - 1; i++) {
@@ -10,10 +9,10 @@ for (i = 0; i <= all_a.length - 1; i++) {
 
 var sliders = document.querySelectorAll('.slide');
 
-for (i = 0; i <= sliders.length-1; i++) {
+for (i = 0; i <= sliders.length - 1; i++) {
   css_left = parseInt(getComputedStyle(sliders[i]).width);
   css_margin = parseInt(getComputedStyle(sliders[i]).marginLeft)
-  sliders[i].style.left = css_left * i + css_margin*2*i + 'px';
+  sliders[i].style.left = css_left * i + css_margin * 2 * i + 'px';
 }
 
 var menu_burger = document.body.getElementsByClassName("burger-button");
@@ -46,18 +45,11 @@ for (i = 0; i <= mass_arrow.length - 1; i++) {
   var arrReverse = false;
   elem_slide.onclick = function(e) {
     e.preventDefault();
+
+    incr = 14;
     let start_time = Date.now();
 
-
-    let timer = setInterval(function() {
-      let timePassed = Date.now() - start_time;
-      if (timePassed >= 500) {
-        clearInterval(timer);
-        return;
-      }
-      incr = 7;
-
-      if (e.target.className.indexOf('left') != -1 && !arrReverse) {
+    if (e.target.className.indexOf('left') != -1 && !arrReverse) {
         imgs.reverse();
         arrReverse = !arrReverse;
       } else if (e.target.className.indexOf('left') == -1 && arrReverse) {
@@ -65,24 +57,20 @@ for (i = 0; i <= mass_arrow.length - 1; i++) {
         arrReverse = !arrReverse;
       }
 
-      // var maxWidth = false;
-      for (j = 0; j <= imgs.length - 1; j++) {
-        var img_to_move = imgs[j];
-        maxRight = 598; //598 цифра взялсь - просто вычислил исходя из макета =)
-        maxLeft = 0;
-        if (e.target.className.indexOf('left') != -1) { //Стрелка влево
-          cs_left = parseInt(getComputedStyle(img_to_move).left);
-          if (j == 0) {
-            if (cs_left == maxRight) {
-              incr = 0;
-              // maxWidth = true;
-              continue;
-            } else if ((cs_left - incr) < maxRight) {
-              img_to_move.style.left = maxRight + 'px';
-              incr = cs_left - maxRight;
-            } else {
-              img_to_move.style.left = cs_left - incr + 'px';
-            }
+    for (j = 0; j <= imgs.length - 1; j++) {
+      var img_to_move = imgs[j];
+      maxRight = 598; //598 цифра взялсь - просто вычислил исходя из макета =)
+      maxLeft = 0;
+      if (e.target.className.indexOf('left') != -1) { //Стрелка влево
+        cs_left = parseInt(getComputedStyle(img_to_move).left);
+        if (j == 0) {
+          if (cs_left == maxRight) {
+            incr = 0;
+            // maxWidth = true;
+            continue;
+          } else if ((cs_left - incr) < maxRight) {
+            img_to_move.style.left = maxRight + 'px';
+            incr = cs_left - incr;
           } else {
             img_to_move.style.left = cs_left - incr + 'px';
           }
@@ -104,6 +92,64 @@ for (i = 0; i <= mass_arrow.length - 1; i++) {
           }
         }
       }
-    }, 20)
+    }
+
+
+    // let timer = setInterval(function() {
+    //   let timePassed = Date.now() - start_time;
+    //   if (timePassed >= 500) {
+    //     clearInterval(timer);
+    //     return;
+    //   }
+    //   incr = 7;
+    //
+    //   if (e.target.className.indexOf('left') != -1 && !arrReverse) {
+    //     imgs.reverse();
+    //     arrReverse = !arrReverse;
+    //   } else if (e.target.className.indexOf('left') == -1 && arrReverse) {
+    //     imgs.reverse();
+    //     arrReverse = !arrReverse;
+    //   }
+    //
+    //   // var maxWidth = false;
+    //   for (j = 0; j <= imgs.length - 1; j++) {
+    //     var img_to_move = imgs[j];
+    //     maxRight = 598; //598 цифра взялсь - просто вычислил исходя из макета =)
+    //     maxLeft = 0;
+    //     if (e.target.className.indexOf('left') != -1) { //Стрелка влево
+    //       cs_left = parseInt(getComputedStyle(img_to_move).left);
+    //       if (j == 0) {
+    //         if (cs_left == maxRight) {
+    //           incr = 0;
+    //           // maxWidth = true;
+    //           continue;
+    //         } else if ((cs_left - incr) < maxRight) {
+    //           img_to_move.style.left = maxRight + 'px';
+    //           incr = cs_left - maxRight;
+    //         } else {
+    //           img_to_move.style.left = cs_left - incr + 'px';
+    //         }
+    //       } else {
+    //         img_to_move.style.left = cs_left - incr + 'px';
+    //       }
+    //     } else {
+    //       cs_left = parseInt(getComputedStyle(img_to_move).left);
+    //       if (j == 0) {
+    //         if (cs_left == maxLeft) {
+    //           incr = 0;
+    //           // maxWidth = true;
+    //           continue;
+    //         } else if ((cs_left + incr) > maxLeft) {
+    //           img_to_move.style.left = 0 + 'px';
+    //           incr = -cs_left;
+    //         } else {
+    //           img_to_move.style.left = cs_left + incr + 'px';
+    //         }
+    //       } else {
+    //         img_to_move.style.left = cs_left + incr + 'px';
+    //       }
+    //     }
+    //   }
+    // }, 20)
   }
 }
