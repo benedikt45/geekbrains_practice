@@ -3,11 +3,8 @@
 @offset: 30px;
 @fields: 30px;
 @offset_one_side: (@offset / 2);
-@max-width: 1290px; // * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
+@max-width-wrapper: 1118px;
+@max-width: 1600px;
 
 a {
   text-decoration: none;
@@ -25,7 +22,23 @@ a {
   padding-left: @fields;
   padding-right: @fields;
   margin: 0 auto;
-  max-width: @max-width;
+  max-width: @max-width-wrapper;
+}
+
+.wrapper {
+  .wrapper();
+  @media screen and (max-width: 1200px) {
+    max-width: 960px;
+  }
+  @media screen and (max-width: 992px) {
+    max-width: 720px;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 540px;
+  }
+  @media screen and (max-width: 576px) {
+    max-width: 100%;
+  }
 }
 
 .row-offests() {
@@ -51,10 +64,10 @@ a {
 }
 
 .size(@n) when (default()) {
-  @val: @n / 12  * 100%;
-  width: ~"calc(@{val} - @{offset})"
-  // max-width: calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  @val: @n / 12 * 100%;
   // flex: 0 0 calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  // max-width: calc(~"(@{i}/12 *100%) - @{gutter}*2");
+  width: ~"calc(@{val} - @{offset})";
 }
 //
 // .col(@i) when (@i=0) {
