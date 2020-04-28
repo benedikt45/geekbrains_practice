@@ -77,6 +77,10 @@ p {
     display: inline-block;
   }
 
+  // &__link:hover {
+  //   animation: logo-move 1s;
+  // }
+
   &__part-1 {
     display: inline-block;
     border-left: 10px solid @color_purple;
@@ -92,6 +96,27 @@ p {
     border-right: 10px solid @color_pink;
     height: 35px;
     border-radius: 20px;
+  }
+
+  &:hover &__part-1 {
+    animation: logo-move 1s;
+  }
+
+  // &:hover {
+  //   animation: logo-move 1s;
+  // }
+}
+@keyframes logo-move {
+  from {
+    height: 20px;
+  }
+
+  to {
+    height: 20px;
+  }
+
+  50% {
+    height: 35px;
   }
 }
 
