@@ -48,24 +48,44 @@ window.onload = function() {
 
   for (i = 0; i <= controlItems.length - 1; i++) {
     controlItems[i].onclick = function(i) {
+      // return changeSliderByControl.call(this);
       // return changeSliderByControl(i);
       // return changeSliderByControl;
-        return function() {
-          var currentIndex = 1;
-          var currentActiveSlider = document.querySelector('.slider-item_active');
-          var currentActiveControl = document.querySelector('.control__item_active');
-          var nextActiveSlider = document.querySelector('.index-slider-' + (i + 1));
+      return function() {
+        var currentIndex = 1;
+        var currentActiveSlider = document.querySelector('.slider-item_active');
+        var currentActiveControl = document.querySelector('.control__item_active');
+        var nextActiveSlider = document.querySelector('.index-slider-' + (i + 1));
 
-          currentActiveSlider.classList.toggle('slider-item_active');
-          currentActiveControl.classList.toggle('control__item_active');
+        currentActiveSlider.classList.toggle('slider-item_active');
+        currentActiveControl.classList.toggle('control__item_active');
 
-          this.classList.toggle('control__item_active');
-          nextActiveSlider.classList.toggle('slider-item_active');
-        }
+        this.classList.toggle('control__item_active');
+        nextActiveSlider.classList.toggle('slider-item_active');
+      }
     }(i)
   }
+  // foo(this, function() {
+  //   var currentIndex = 1;
+  //   var currentActiveSlider = document.querySelector('.slider-item_active');
+  //   var currentActiveControl = document.querySelector('.control__item_active');
+  //   var nextActiveSlider = document.querySelector('.index-slider-' + (i + 1));
+  //
+  //   currentActiveSlider.classList.toggle('slider-item_active');
+  //   currentActiveControl.classList.toggle('control__item_active');
+  //
+  //   this.classList.toggle('control__item_active');
+  //   nextActiveSlider.classList.toggle('slider-item_active');
+  // })
+  // }
+  //(i)
+  // }
+
+  function foo(elem, func) {
+    func.call(elem);
+  }
   // i = 10;
-  // function changeSliderByControl(e) {
+  // function changeSliderByControl(i) {
   //   // return function() {
   //     var currentIndex = 1;
   //     var currentActiveSlider = document.querySelector('.slider-item_active');
