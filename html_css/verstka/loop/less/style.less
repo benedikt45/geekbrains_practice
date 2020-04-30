@@ -76,11 +76,9 @@ p {
   &__link {
     display: inline-block;
   }
-
   // &__link:hover {
   //   animation: logo-move 1s;
   // }
-
   &__part-1 {
     display: inline-block;
     border-left: 10px solid @color_purple;
@@ -88,7 +86,7 @@ p {
     height: 20px;
     border-radius: 20px;
     margin-right: 6px;
-        // transition: height 0.5s;
+    // transition: height 0.5s;
   }
 
   &__part-2 {
@@ -102,11 +100,9 @@ p {
   &:hover &__part-1 {
     animation: logo-move 1s;
   }
-
   // &:not(:hover) &__part-1 {
   //   height: 20px;
   // }
-
   // &:hover {
   //   animation: logo-move 1s;
   // }
@@ -482,10 +478,15 @@ p {
 }
 
 .menu {
+  position: absolute;
   font-size: 16px;
+  // display: none;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s linear;
 
   &__item {
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   &__link {
@@ -533,6 +534,12 @@ p {
     .size(2);
     // color: @color_purple;
     &:extend(.color-purple);
+    position: relative;
+
+    &:hover .menu {
+      // display: block;
+      height: 100%;
+    }
   }
 
   &__help {
@@ -540,6 +547,11 @@ p {
     .size(2);
     // color: @color_purple;
     &:extend(.color-purple);
+    position: relative;
+
+    &:hover .menu {
+      height: 100%;
+    }
   }
 
   &__social-links {

@@ -152,4 +152,11 @@ window.onload = function() {
        return timer;
      }
    }()
+
+   var document.querySelector('.footer__menu');
+
+   addEventLister('click', function() {
+
+   });
+
 }
