@@ -1,4 +1,5 @@
 window.onload = function() {
+
   var sliderItems = document.querySelectorAll(".slider-item");
   var maxSliders = sliderItems.length;
   var max_height = 0;
@@ -114,4 +115,41 @@ window.onload = function() {
 
   sliderBlocks.style.height = (max_height + parseInt(getComputedStyle(sliderBlocks).height) - 100) + 'px';
 
+  var btnsToScroll = document.getElementsByClassName('nav__link');
+  n = 300;
+  // for (i = 0; i < btnsToScroll.length; i++) {
+  //
+  //   btnsToScroll[i].onclick = scrollToBlock(n);
+  //   n += 200;
+  // }
+
+  window.scrollToBlock = function() {
+
+     var timer, start, factor;
+     return function(block, duration) {
+       var offset = window.pageYOffset,
+         delta = block - window.pageYOffset; // Y-offset difference
+       duration = duration || 1000; // default 1 sec animation
+       start = Date.now(); // get start time
+       factor = 0;
+
+       if (timer) {
+         clearInterval(timer); // stop any running animations
+       }
+
+       function step() {
+         var y;
+         factor = (Date.now() - start) / duration; // get interpolation factor
+         if (factor >= 1) {
+           clearInterval(timer); // stop animation
+           factor = 1; // clip to max 1.0
+         }
+         y = factor * delta + offset;
+         window.scrollBy(0, y - window.pageYOffset);
+       }
+
+       timer = setInterval(step, 10);
+       return timer;
+     }
+   }()
 }

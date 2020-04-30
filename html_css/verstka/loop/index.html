@@ -24,8 +24,8 @@
       <ul class="nav header__nav">
         <li class="nav__item"><a href="#" class="nav__link nav__link-active">About</a></li>
         <li class="nav__item"><a href="#" class="nav__link">Help</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Features</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Signup</a></li>
+        <li class="nav__item"><a href="#" class="nav__link" onclick="scrollToBlock(document.getElementById('features').offsetTop, 500)">Features</a></li>
+        <li class="nav__item"><a href="#" class="nav__link" onclick="scrollToBlock(document.getElementById('sing-up').offsetTop, 500)">Signup</a></li>
       </ul>
       <div class="header__button-arrow button-arrow">Request Demo<i class="fa fa-arrow-right button-arrow__arrow" aria-hidden="true"></i></div>
     </header>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </section>
-  <section class="features">
+  <section class="features" id="features">
     <div class="wrapper">
       <h2 class="features__title">Features</h2>
       <p class="features__title-text">Some of the features and advantages that we provide for those of you who store data in this Data Warehouse.</p>
@@ -161,7 +161,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" id="sing-up">
     <div class="wrapper">
       <div class="footer__wrapper">
         <div class="footer__contacts contacts">
