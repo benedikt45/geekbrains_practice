@@ -153,10 +153,10 @@ window.onload = function() {
      }
    }()
 
-   var document.querySelector('.footer__menu');
-
-   addEventLister('click', function() {
-
-   });
+   // var document.querySelector('.footer__menu');
+   //
+   // addEventLister('click', function() {
+   //
+   // });
 
 }
