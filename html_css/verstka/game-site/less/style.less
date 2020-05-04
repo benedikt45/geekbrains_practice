@@ -118,10 +118,11 @@ h3 {
   &__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__item {
-    margin-right: 25px;
+    margin: 0 25px;
   }
 
   &__link {
@@ -283,9 +284,11 @@ h3 {
   }
 
   &__nav {
+    flex: 1;
     @media screen and (max-width: 992px) {
       display: none;
-      .size(11);
+      // .size(11);
+      // flex: 1;
     }
   }
 
